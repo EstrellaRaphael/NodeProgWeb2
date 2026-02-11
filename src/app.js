@@ -42,4 +42,10 @@ app.delete("/selecoes/:id", (req, res) => {
     res.status(200).send("Seleção excluída com sucesso!");
 });
 
+app.put("/selecoes/:id", (req, res) => {
+    let index = buscaIndexSelecao(req.params.id)
+    selecoes[index] = req.body;
+    res.status(200).send("Seleção atualizada com sucesso!");
+});
+
 export default app;
