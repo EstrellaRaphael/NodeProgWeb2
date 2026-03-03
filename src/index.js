@@ -13,4 +13,3 @@ conexao.connect((err) => {
         console.log(`Server rodando em http://localhost:${port}`);
     })
 });
-
