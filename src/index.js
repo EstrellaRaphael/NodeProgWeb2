@@ -1,5 +1,5 @@
-import app from "./src/router.js";
-import conexao from "./infra/conexao.js";
+import app from "./router.js";
+import conexao from "../infra/conexao.js";
 
 const port = 3000;
 
