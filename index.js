@@ -1,4 +1,4 @@
-import app from "./src/app.js";
+import app from "./src/router.js";
 import conexao from "./infra/conexao.js";
 
 const port = 3000;

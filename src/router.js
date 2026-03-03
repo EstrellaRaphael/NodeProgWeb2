@@ -1,7 +1,7 @@
 import express from "express";
 import conexao from "../infra/conexao.js";
 
-const app = express();
+const router = express();
 
 function tratamento() {
     if (erro) {
@@ -11,20 +11,20 @@ function tratamento() {
     }
 }
 
-app.use(express.json());
+router.use(express.json());
 
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
     res.send("Bem-vindo à API de Pokémon de Fogo (com MySQL)!");
 });
 
-app.get("/pokemon", (req, res) => {
+router.get("/pokemon", (req, res) => {
     const sql = "SELECT * FROM pokemon;";
     conexao.query(sql, (erro, resultado) => {
         tratamento(erro, resultado, res);
     });
 });
 
-app.get("/pokemon/:id", (req, res) => {
+router.get("/pokemon/:id", (req, res) => {
     const id = req.params.id;
     const sql = "SELECT * FROM pokemon WHERE id=?;";
     conexao.query(sql, id, (erro, resultado) => {
@@ -37,7 +37,7 @@ app.get("/pokemon/:id", (req, res) => {
     });
 });
 
-app.post("/pokemon", (req, res) => {
+router.post("/pokemon", (req, res) => {
     const pokemon = req.body;
     const sql = "INSERT INTO pokemon SET ?;";
     conexao.query(sql, pokemon, (erro, resultado) => {
@@ -49,7 +49,7 @@ app.post("/pokemon", (req, res) => {
     });
 });
 
-app.delete("/pokemon/:id", (req, res) => {
+router.delete("/pokemon/:id", (req, res) => {
     const id = req.params.id;
     const sql = "DELETE FROM pokemon WHERE id=?;";
     conexao.query(sql, id, (erro, resultado) => {
@@ -57,7 +57,7 @@ app.delete("/pokemon/:id", (req, res) => {
     });
 });
 
-app.put("/pokemon/:id", (req, res) => {
+router.put("/pokemon/:id", (req, res) => {
     const id = req.params.id;
     const pokemon = req.body;
     const sql = "UPDATE pokemon SET ? WHERE id=?;";
@@ -66,4 +66,4 @@ app.put("/pokemon/:id", (req, res) => {
     });
 });
 
-export default app;
+export default router;
