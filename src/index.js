@@ -1,5 +1,5 @@
-import app from "./router.js";
-import conexao from "../infra/conexao.js";
+import app from "./app.js";
+import conexao from "./app/database/index.js";
 
 const port = 3000;
 
@@ -12,4 +12,4 @@ conexao.connect((err) => {
     app.listen(port, () => {
         console.log(`Server rodando em http://localhost:${port}`);
     })
-});
+}); 
