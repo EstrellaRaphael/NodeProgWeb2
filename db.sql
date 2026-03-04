@@ -1035,3 +1035,10 @@ INSERT INTO pokemon (id, dexNumber, pokemon, type) VALUES
 (1023, '1023', 'Iron-crown', 'Steel/Psychic'),
 (1024, '1024', 'Terapagos', 'Normal'),
 (1025, '1025', 'Pecharunt', 'Poison/Ghost');
+
+CREATE TABLE IF NOT EXISTS team (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    pokemon_id INT NOT NULL,
+    nickname VARCHAR(50),
+    FOREIGN KEY (pokemon_id) REFERENCES pokemon(id) ON DELETE CASCADE
+);
