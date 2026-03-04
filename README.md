@@ -1,6 +1,6 @@
 # 🎮 Pokémon Team Builder - Full Stack
 
-Bem-vindo ao **Pokémon Team Builder**, uma aplicação moderna e robusta para criar e gerenciar sua equipe dos sonhos de Pokémon da 1ª Geração. Este projeto demonstra a integração entre um backend **Node.js** e um frontend de ponta utilizando **Kotlin Compose Multiplatform (Wasm)**.
+Bem-vindo ao **Pokémon Team Builder**, uma aplicação moderna e robusta para criar e gerenciar sua equipe dos sonhos de Pokémon. Este projeto demonstra a integração entre um backend **Node.js** e um frontend de ponta utilizando **Kotlin Compose Multiplatform (Wasm)**.
 
 ---
 
